@@ -1,5 +1,3 @@
-export const main = (): void => {
-    console.log('hello!')
-}
+import {start} from './server'
 
-main()
+start()
