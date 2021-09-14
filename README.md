@@ -113,3 +113,6 @@ Retrieve details for an upcoming event
     proofOfVaccineRequired: null | boolean
 }
 ```
+
+# Tips
+
