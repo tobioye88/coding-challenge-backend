@@ -10,7 +10,7 @@ interface Event {
     organizer: Organizer
 }
 
-export const importData () => {
+export const importData = () => {
     // Import the data in json format and save in database
 }
 
