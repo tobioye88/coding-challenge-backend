@@ -116,3 +116,8 @@ Retrieve details for an upcoming event
 
 # Tips
 
+You have been provided with the barest of bare bones to get started. But don't feel compelled to use what is here, if you prefer hapi to express, or don't want to use any kind of http framework at all, or dislike typescript,you can yank those out and start completely afresh. You won't be judged negatively for it, but if you do make any big decisions it would certainly be a good idea to document why you chose what you chose.  
+
+Because the slate is blank, you will be making a lot of decisions about how the app should work, it's a good idea to document these decisions, as you will very likely be asked about them in the follow-up.
+
+The functional requirements here should probably take no longer than a couple of hours to implement. The standard you should be aiming for is something you would submit as a pull request for a production ready feature.
