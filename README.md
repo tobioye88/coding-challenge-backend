@@ -101,7 +101,8 @@ Retrieve details for an upcoming event
         chanceOfRain: number 0-100
     }
     // OPTIONAL: This has been designated a 'nice to to have'
-    // if an event is happening in any country other than canada, fetch the visa and proof of vaccination requirements
+    // if an event is happening in any country other than canada, fetch the visa and proof of vaccination requirements our organizers need
+    // the destination would be the country the event is happening in and the source is canada
     // if an event is happening in canada, leave this null
     visaRequirements: null | string
     proofOfVaccineRequired: null | boolean
