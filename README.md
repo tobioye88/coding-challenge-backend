@@ -35,7 +35,7 @@ the solution is to build a REST api to perform CRUD operations on events.
 
 Determine how to model the data. The clients have provided a sample of their data in `data/data.json`. Your project
 manager has told you that they have events, events have a location, a name, and an organizer, who is a member of staff
-responsible for the event. You also know that the're will be a need to associate a list of invitees with events, along
+responsible for the event. You also know that there will be a need to associate a list of invitees with events, along
 with their rsvp status.
 
 **Derive a data model for this relation of entities. Create the tables in the sqlite database, you may want to think
@@ -46,7 +46,7 @@ The data given to you by the clients is a sample of the data as you expect to re
 provide a large json file to import into the db.
 
 **Import the sample data into the database, write a script to do this and bear in mind it must operate at scale. You
-should think about data integrity, these clients are not tech savvy and we dont know how this json is being generated**
+should think about data integrity, these clients are not tech-savvy, and we don't know how this json is being generated**
 
 #### The api
 
