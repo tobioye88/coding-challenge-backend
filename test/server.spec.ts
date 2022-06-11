@@ -1,5 +1,5 @@
 import { Server } from "http";
-import {start} from "./server";
+import {start} from "../src/server";
 
 describe('start', () => {
     it('starts server and returns server instance', async () => {

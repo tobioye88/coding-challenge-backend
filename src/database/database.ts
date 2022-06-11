@@ -3,7 +3,7 @@ import {Database} from "sqlite3"
 
 let db: Database
 
-const dbLocation = join(__dirname, '../data/myDb.db')
+const dbLocation = join(__dirname, '../../data/myDb.db')
 
 export const getDBConnection = (): Database => {
 
