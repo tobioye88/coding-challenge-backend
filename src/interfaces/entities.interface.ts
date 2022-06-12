@@ -11,9 +11,15 @@ export interface IEvent {
   location?: string;
   date?: Date;
   organizer?: Organizer;
+  weather?: Weather | null;
 }
 
 export interface Organizer {
   id?: number;
   name?: string;
+}
+
+export interface Weather {
+  temperatureInDegreesCelcius: number;
+  chanceOfRain: number; //0-100
 }

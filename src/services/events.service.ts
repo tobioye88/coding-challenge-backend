@@ -60,4 +60,17 @@ export class EventsService {
 
     return { events, totalResult };
   }
+
+  static async getEventById(eventId: number): Promise<IEvent> {
+    const eventRepository = EventsService.getEventRepository();
+    const event = await eventRepository.findOne({
+      where: { id: eventId },
+      relations: ["organizer", "attendees"],
+    });
+
+    if (!event) {
+      throw new Error(`Event with the id of ${eventId} does not exist`);
+    }
+    return event;
+  }
 }

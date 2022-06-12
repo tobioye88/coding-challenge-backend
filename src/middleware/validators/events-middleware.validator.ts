@@ -26,3 +26,22 @@ export function eventsValidator(
   }
   next();
 }
+
+export function eventValidator(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  const params = req.params;
+
+  const schema = Joi.object({
+    id: Joi.number().positive(),
+  });
+  const { error } = schema.validate(params);
+
+  if (error) {
+    res.status(400).json(ResponseHelper.error(error, "Invalid Request"));
+    return;
+  }
+  next();
+}
