@@ -1,3 +1,4 @@
-import {start} from './server'
+import { start } from "./server";
+import "reflect-metadata";
 
-start()
+start();

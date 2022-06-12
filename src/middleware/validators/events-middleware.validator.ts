@@ -13,8 +13,8 @@ export function eventsValidator(
   const dateErrorMessage = "Only valid date format allowed eg. YYYY-MM-DD";
 
   const schema = Joi.object({
-    page: Joi.number(),
-    size: Joi.number(),
+    page: Joi.number().positive(),
+    size: Joi.number().positive(),
     from: Joi.string().pattern(datePattern).message(dateErrorMessage),
     until: Joi.string().pattern(datePattern).message(dateErrorMessage),
   });

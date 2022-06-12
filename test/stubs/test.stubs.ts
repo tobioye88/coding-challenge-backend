@@ -12,14 +12,14 @@ export function getMockResponse(returnObject: any) {
     status: (status: number) => {
       returnObject.status = status;
       return {
-        json: data => {
+        json: (data) => {
           returnObject.data = data;
-        }
+        },
       };
     },
-    json: data => {
+    json: (data) => {
       returnObject.data = data;
-    }
+    },
   } as Response;
   return mockResponse;
 }

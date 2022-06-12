@@ -1,32 +1,42 @@
-import { Column, CreateDateColumn, Entity, JoinTable, ManyToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  JoinColumn,
+  JoinTable,
+  ManyToMany,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from "typeorm";
+import { IEvent } from "../../interfaces/entities.interface";
 import { Attendee } from "./attendee.entity";
 import { Organizer } from "./organizer.entity";
 
-
-@Entity('events')
-export class Event {
+@Entity("events")
+export class Event implements IEvent {
   @PrimaryGeneratedColumn()
   id?: number;
 
-  @Column()
+  @Column({ type: "varchar" })
   name?: string;
 
-  @Column()
+  @Column({ type: "boolean" })
   isOutside?: boolean;
 
-  @Column({ type: 'date' })
+  @Column({ type: "date" })
   date?: Date;
 
-  @Column()
+  @Column({ type: "varchar" })
   location?: string;
 
-  @ManyToMany(type => Attendee, attendee => attendee.id, { eager: false })
+  @ManyToMany((type) => Attendee, (attendee) => attendee.id, { eager: false })
   @JoinTable()
-  attendees?: Attendee[]
+  attendees?: Attendee[];
 
-  @OneToOne(type => Organizer, organizer => organizer.id)
+  @JoinColumn({ name: "organizer_id" })
+  @ManyToOne((type) => Organizer, (organizer) => organizer.id)
   organizer?: Organizer;
 
-  @CreateDateColumn()
+  @CreateDateColumn({ name: "created_at", type: "datetime" })
   createdAt?: Date;
 }

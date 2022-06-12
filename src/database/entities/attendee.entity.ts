@@ -1,13 +1,18 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+} from "typeorm";
 
-@Entity('attendees')
+@Entity("attendees")
 export class Attendee {
   @PrimaryGeneratedColumn()
   id?: number;
 
-  @Column()
+  @Column({ type: "varchar" })
   name?: string;
 
-  @CreateDateColumn({ name: 'created_at' })
+  @CreateDateColumn({ name: "created_at" })
   createdAt?: Date;
 }
